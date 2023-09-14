@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
               title: Text(element.name),
               subtitle: Text(element.body),
-              trailing: IconButton(icon: Icon(Icons.arrow_right),onPressed: (){
+              trailing: IconButton(icon: Icon(Icons.arrow_circle_right),onPressed: (){
                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  NewsDescription(news: element)));
               },),
                   ),
