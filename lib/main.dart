@@ -35,12 +35,25 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   List<News> _news = [
-    News('Тодд Говард: "А мы Starfield выпустили"', 'ничего интересного', DateTime.now(), 'imageUrl'),
-    News('Remedy показала, как изменился хоррор Alan Wake 2 за три года разработки" ', 'На The Game Awards в 2021 году Remedy Entertainment официально анонсировала долгожданное продолжение психологического триллера Alan Wake. Сиквел пережил тернистый путь разработки и несколько трансформаций, которые в итоге сделали его полноценным хоррором с элементами мистики, детектива и выживания. Авторы Alan Wake 2 наглядно показали, как изменилась игра за три года активной разработки.', DateTime.now(), 'imageUrl'),
-    News('Сиквел Rust не будет разрабатываться на Unity ', 'Гэрри Ньюман, основатель студии Facepunch, известной по Rust, высказал свое мнение о недавних изменениях в Unity, в частности о грядущей системе "налога за установку" Вкратце, Ньюман раскритиковал этот выбор и подтвердил, что Rust 2 не будет разрабатываться на Unity. Интересно то, что Rust 2 еще не была официально представлена или подтверждена, поэтому слова Ньюмана, по сути, являются анонсом' , DateTime.now(), 'imageUrl'),
-    News('Погода на сегодня', 'Sony Interactive Entertainment только что объявила о новой презентации State of Play, сообщив, что она запланирована на пятницу, 15 сентября 2023 года, в 00:00 по московскому времени. Японский гигант сделал это важное объявление в сообщении в блоге PlayStation, а также поделился следующим сообщением:', DateTime.now(), 'imageUrl'),
+    News('Тодд Говард: "А мы Starfield выпустили"', 'ничего интересного', DateTime.now(), 'https://i.playground.ru/p/dZKnhZMm5eKwNm5914JT8w.jpeg'),
+    News('Remedy показала, как изменился хоррор Alan Wake 2 за три года разработки" ', 'На The Game Awards в 2021 году Remedy Entertainment официально анонсировала долгожданное продолжение психологического триллера Alan Wake. Сиквел пережил тернистый путь разработки и несколько трансформаций, которые в итоге сделали его полноценным хоррором с элементами мистики, детектива и выживания. Авторы Alan Wake 2 наглядно показали, как изменилась игра за три года активной разработки.', DateTime.now(), 'https://i.playground.ru/p/uil--74pW6y3NHMFm8uw5Q.jpeg'),
+    News('Сиквел Rust не будет разрабатываться на Unity ', 'Гэрри Ньюман, основатель студии Facepunch, известной по Rust, высказал свое мнение о недавних изменениях в Unity, в частности о грядущей системе "налога за установку" Вкратце, Ньюман раскритиковал этот выбор и подтвердил, что Rust 2 не будет разрабатываться на Unity. Интересно то, что Rust 2 еще не была официально представлена или подтверждена, поэтому слова Ньюмана, по сути, являются анонсом' , DateTime.now(), 'https://i.playground.ru/p/vHUzNvoZj9p0xz-tR_7ALw.jpeg'),
+    News('Погода на сегодня', 'Sony Interactive Entertainment только что объявила о новой презентации State of Play, сообщив, что она запланирована на пятницу, 15 сентября 2023 года, в 00:00 по московскому времени. Японский гигант сделал это важное объявление в сообщении в блоге PlayStation, а также поделился следующим сообщением:', DateTime.now(), ''),
   ];
-
+List<String> _month = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Now',
+  'Dec'
+];
 
   List<Widget> _buildNewsList(List<News> _newsList){
     List<Widget> _newsRows = [];
@@ -51,16 +64,30 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             children: [
               Container(
+                child: element.imageUrl.isEmpty?Container():Image.network(element.imageUrl),
                 height: 200,
-                color: Colors.blueGrey,
+                color: Color.fromARGB(255, 159, 104, 108),
               ),
-              ListTile(
-              title: Text(element.name),
-              subtitle: Text(element.body),
-              trailing: IconButton(icon: Icon(Icons.arrow_circle_right),onPressed: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  NewsDescription(news: element)));
-              },),
-                  ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: ListTile(
+                title: Text(element.name, style: TextStyle(fontWeight: FontWeight.bold),),
+                subtitle: Text(element.body, style: TextStyle(fontStyle: FontStyle.italic),),
+                trailing: IconButton(icon: Icon(Icons.arrow_circle_right, size: 30,),onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  NewsDescription(news: element)));
+                },),
+                    ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(Icons.heart_broken_sharp),
+                    Text('${element.date.day}, ${_month[element.date.month-1]}')
+                  ],
+                ),
+              )
             ],
           ),
         ));
@@ -71,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) { 
     return  Scaffold(
         appBar: AppBar(
-          title: Text("News"),
+          title: Text("NEWS", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),),
           backgroundColor: Colors.red, 
         ),
         
