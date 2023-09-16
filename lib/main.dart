@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     News('Тодд Говард: "А мы Starfield выпустили"', 'Студия Immortals of Aveum уволила почти половину сотрудников через несколько недель после релиза. Компания Ascendant Studios, создавшая игру Immortals of Aveum, сократила почти половину своего штата, сообщили три сотрудника студии. По оценкам сотрудников, до увольнения в студии работало от 80 до 100 человек, а сокращено было около 40. Генеральный директор Ascendant Брет Роббинс (Bret Robbins) объявил об увольнениях на собрании в четверг.', DateTime.now(), 'https://i.playground.ru/p/dZKnhZMm5eKwNm5914JT8w.jpeg'),
     News('Remedy показала, как изменился хоррор Alan Wake 2 за три года разработки" ', 'На The Game Awards в 2021 году Remedy Entertainment официально анонсировала долгожданное продолжение психологического триллера Alan Wake. Сиквел пережил тернистый путь разработки и несколько трансформаций, которые в итоге сделали его полноценным хоррором с элементами мистики, детектива и выживания. Авторы Alan Wake 2 наглядно показали, как изменилась игра за три года активной разработки.', DateTime.now(), 'https://i.playground.ru/p/uil--74pW6y3NHMFm8uw5Q.jpeg'),
     News('Сиквел Rust не будет разрабатываться на Unity ', 'Гэрри Ньюман, основатель студии Facepunch, известной по Rust, высказал свое мнение о недавних изменениях в Unity, в частности о грядущей системе "налога за установку" Вкратце, Ньюман раскритиковал этот выбор и подтвердил, что Rust 2 не будет разрабатываться на Unity. Интересно то, что Rust 2 еще не была официально представлена или подтверждена, поэтому слова Ньюмана, по сути, являются анонсом' , DateTime.now(), 'https://i.playground.ru/p/vHUzNvoZj9p0xz-tR_7ALw.jpeg'),
-    News('Погода на сегодня', 'Sony Interactive Entertainment только что объявила о новой презентации State of Play, сообщив, что она запланирована на пятницу, 15 сентября 2023 года, в 00:00 по московскому времени. Японский гигант сделал это важное объявление в сообщении в блоге PlayStation, а также поделился следующим сообщением:', DateTime.now(), ''),
+    News('Sony present information', 'Sony Interactive Entertainment только что объявила о новой презентации State of Play, сообщив, что она запланирована на пятницу, 15 сентября 2023 года, в 00:00 по московскому времени. Японский гигант сделал это важное объявление в сообщении в блоге PlayStation, а также поделился следующим сообщением:', DateTime.now(), 'https://blog.ja.playstation.com/tachyon/sites/7/2060/09/b90cc9b5a1773d60f8dfe711e454ec9491324d88.png?resize=1088%2C612&crop_strategy=smart&zoom=1.5'),
   ];
 List<String> _month = [
   'Jan',
@@ -65,8 +65,8 @@ List<String> _month = [
             children: [
               Container(
                 child: element.imageUrl.isEmpty?Container():Image.network(element.imageUrl),
-                height: 250,
-                color: Color.fromARGB(255, 69, 69, 69),
+                height: 250, width: 350,
+                color: Colors.white,
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 20, 0.5, 0.5),
