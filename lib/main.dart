@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'НОВОСТИ',
       theme: ThemeData(
-       scaffoldBackgroundColor: Colors.white,
+       scaffoldBackgroundColor: Colors.white54,
        primarySwatch: Colors.red,
       ),
       home: const MyHomePage(title: 'Новости'),
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   List<News> _news = [
-    News('Тодд Говард: "А мы Starfield выпустили"', 'ничего интересного', DateTime.now(), 'https://i.playground.ru/p/dZKnhZMm5eKwNm5914JT8w.jpeg'),
+    News('Тодд Говард: "А мы Starfield выпустили"', 'Студия Immortals of Aveum уволила почти половину сотрудников через несколько недель после релиза. Компания Ascendant Studios, создавшая игру Immortals of Aveum, сократила почти половину своего штата, сообщили три сотрудника студии. По оценкам сотрудников, до увольнения в студии работало от 80 до 100 человек, а сокращено было около 40. Генеральный директор Ascendant Брет Роббинс (Bret Robbins) объявил об увольнениях на собрании в четверг.', DateTime.now(), 'https://i.playground.ru/p/dZKnhZMm5eKwNm5914JT8w.jpeg'),
     News('Remedy показала, как изменился хоррор Alan Wake 2 за три года разработки" ', 'На The Game Awards в 2021 году Remedy Entertainment официально анонсировала долгожданное продолжение психологического триллера Alan Wake. Сиквел пережил тернистый путь разработки и несколько трансформаций, которые в итоге сделали его полноценным хоррором с элементами мистики, детектива и выживания. Авторы Alan Wake 2 наглядно показали, как изменилась игра за три года активной разработки.', DateTime.now(), 'https://i.playground.ru/p/uil--74pW6y3NHMFm8uw5Q.jpeg'),
     News('Сиквел Rust не будет разрабатываться на Unity ', 'Гэрри Ньюман, основатель студии Facepunch, известной по Rust, высказал свое мнение о недавних изменениях в Unity, в частности о грядущей системе "налога за установку" Вкратце, Ньюман раскритиковал этот выбор и подтвердил, что Rust 2 не будет разрабатываться на Unity. Интересно то, что Rust 2 еще не была официально представлена или подтверждена, поэтому слова Ньюмана, по сути, являются анонсом' , DateTime.now(), 'https://i.playground.ru/p/vHUzNvoZj9p0xz-tR_7ALw.jpeg'),
     News('Погода на сегодня', 'Sony Interactive Entertainment только что объявила о новой презентации State of Play, сообщив, что она запланирована на пятницу, 15 сентября 2023 года, в 00:00 по московскому времени. Японский гигант сделал это важное объявление в сообщении в блоге PlayStation, а также поделился следующим сообщением:', DateTime.now(), ''),
@@ -65,26 +65,26 @@ List<String> _month = [
             children: [
               Container(
                 child: element.imageUrl.isEmpty?Container():Image.network(element.imageUrl),
-                height: 200,
-                color: Color.fromARGB(255, 159, 104, 108),
+                height: 250,
+                color: Color.fromARGB(255, 69, 69, 69),
               ),
               Padding(
-                padding: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.fromLTRB(20, 20, 0.5, 0.5),
                 child: ListTile(
                 title: Text(element.name, style: TextStyle(fontWeight: FontWeight.bold),),
                 subtitle: Text(element.body, style: TextStyle(fontStyle: FontStyle.italic),),
-                trailing: IconButton(icon: Icon(Icons.arrow_circle_right, size: 30,),onPressed: (){
+                trailing: IconButton(icon: Icon(Icons.arrow_circle_right, size: 30, color: Colors.red,),onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  NewsDescription(news: element)));
                 },),
                     ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
+                padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(Icons.heart_broken_sharp),
-                    Text('${element.date.day}, ${_month[element.date.month-1]}')
+                    Icon(Icons.favorite, size: 30, color: Colors.red,),
+                    Text('${element.date.day}, ${_month[element.date.month-1]}', style: TextStyle(fontStyle: FontStyle.italic),)
                   ],
                 ),
               )
