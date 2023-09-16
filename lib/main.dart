@@ -69,11 +69,11 @@ List<String> _month = [
                 color: Colors.white,
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(20, 20, 0.5, 0.5),
+                padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
                 child: ListTile(
                 title: Text(element.name, style: TextStyle(fontWeight: FontWeight.bold),),
-                subtitle: Text(element.body, style: TextStyle(fontStyle: FontStyle.italic),),
-                trailing: IconButton(icon: Icon(Icons.arrow_circle_right, size: 30, color: Colors.red,),onPressed: (){
+                subtitle: Text(element.body, style: TextStyle(fontStyle: FontStyle.italic, fontWeight: FontWeight.w300),),
+                trailing: IconButton(icon: Icon(Icons.keyboard_arrow_right, size: 30, color: Colors.red,),onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  NewsDescription(news: element)));
                 },),
                     ),
