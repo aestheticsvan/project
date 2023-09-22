@@ -74,22 +74,24 @@ class NewsDescription extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              padding: EdgeInsets.only(left: 5,right:5,bottom: 5),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'Комментарий'),
+            SafeArea(
+              child: Container(
+                padding: EdgeInsets.only(left: 5,right:5,bottom: 5),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: 'Комментарий'),
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                    child: CircleAvatar(child: Icon(Icons.send)),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                      child: CircleAvatar(child: Icon(Icons.send)),
+                    )
+                  ],
+                ),
               ),
             )
           ],

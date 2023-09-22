@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project/add_news.dart';
+import 'package:project/add_post.dart';
 import 'package:project/model/comment.dart';
 import 'package:project/model/news.dart';
 import 'package:project/news_description.dart';
@@ -160,7 +160,7 @@ class _NewsMainPageState extends State<NewsMainPage> {
     switch (_selected) {
       case PopupMenuEntries.ADDNEWS:
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => AddNews()));
+            .push(MaterialPageRoute(builder: (context) => AddPost()));
         break;
       case PopupMenuEntries.BRIGHTNESSSWITCH:
         break;
