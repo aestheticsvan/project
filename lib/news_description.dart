@@ -76,7 +76,7 @@ class NewsDescription extends StatelessWidget {
             ),
             SafeArea(
               child: Container(
-                padding: EdgeInsets.only(left: 5,right:5,bottom: 5),
+                padding: EdgeInsets.only(left: 5, right: 5, bottom: 5),
                 child: Row(
                   children: [
                     Expanded(

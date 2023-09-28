@@ -1,10 +1,13 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:project/add_post.dart';
 import 'package:project/model/comment.dart';
 import 'package:project/model/news.dart';
 import 'package:project/news_description.dart';
+import 'package:project/user.dart';
 
-enum PopupMenuEntries { BRIGHTNESSSWITCH, ADDNEWS }
+enum PopupMenuEntries { BRIGHTNESSSWITCH, ADDNEWS, USERPROFILE }
 
 class NewsMainPage extends StatefulWidget {
   const NewsMainPage({super.key, required this.title});
@@ -162,9 +165,11 @@ class _NewsMainPageState extends State<NewsMainPage> {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => AddPost()));
         break;
-      case PopupMenuEntries.BRIGHTNESSSWITCH:
+      case PopupMenuEntries.USERPROFILE:
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => UserProfile()));
         break;
       default:
+      
     }
 
     print(_selected.toString());
@@ -190,8 +195,11 @@ class _NewsMainPageState extends State<NewsMainPage> {
                         ],
                       )),
                       PopupMenuItem(
+                          value: PopupMenuEntries.USERPROFILE,
+                          child: Text('User')),
+                          PopupMenuItem(
                           value: PopupMenuEntries.ADDNEWS,
-                          child: Text('Add post')),
+                          child: Text('Add post'))
                     ]))
           ],
           title: Text(
