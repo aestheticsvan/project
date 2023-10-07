@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_final_fields
+// ignore_for_file: prefer_const_constructors, prefer_final_fields, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 import 'package:project/add_post.dart';

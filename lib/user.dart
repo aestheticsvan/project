@@ -13,26 +13,24 @@ class UserProfile extends StatelessWidget {
         title: Text('User'),
       ),
       body: SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  decoration: BoxDecoration(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40)), color: Colors.red,),
-                  height: 300,
-                  width: double.infinity,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CircleAvatar(backgroundColor: Colors.white, radius:30,
-                      child: Icon(Icons.account_circle, size:60, color: Colors.black,))
-                    ],
+          child: 
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Icon(Icons.account_circle, size:130, color: Colors.black,),
+                        Text('@andrew', style: TextStyle(fontSize: 20),),
+                        Text('from San Francisco', style: TextStyle(fontSize: 20),),
+                      ],
+                    ),
                   ),
-                )
-              ],
-            ),
-          )),
+                ),
+              ),
+          ),
     );
   }
 }

@@ -4,6 +4,9 @@ import 'package:project/model/comment.dart';
 import 'package:project/model/news.dart';
 import 'package:project/news_description.dart';
 import 'package:project/news_main_page.dart';
+import 'dart:async';
+
+import 'package:project/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255),
         primarySwatch: Colors.red,
       ),
-      home: const NewsMainPage(title: 'Новости'),
+      home: Splash(),
     );
   }
 }
