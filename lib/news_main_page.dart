@@ -166,10 +166,10 @@ class _NewsMainPageState extends State<NewsMainPage> {
             .push(MaterialPageRoute(builder: (context) => AddPost()));
         break;
       case PopupMenuEntries.USERPROFILE:
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => UserProfile()));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => UserProfile()));
         break;
       default:
-      
     }
 
     print(_selected.toString());
@@ -197,7 +197,7 @@ class _NewsMainPageState extends State<NewsMainPage> {
                       PopupMenuItem(
                           value: PopupMenuEntries.USERPROFILE,
                           child: Text('User')),
-                          PopupMenuItem(
+                      PopupMenuItem(
                           value: PopupMenuEntries.ADDNEWS,
                           child: Text('Add post'))
                     ]))

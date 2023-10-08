@@ -88,7 +88,7 @@ class NewsDescription extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: CircleAvatar(child: Icon(Icons.send)),
+                      child: CircleAvatar(child: IconButton(icon: Icon(Icons.send), onPressed: () {print(1);},)),
                     )
                   ],
                 ),

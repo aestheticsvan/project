@@ -10,15 +10,20 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _navigatetohome();
   }
 
-    _navigatetohome()async{
-      await Future.delayed(Duration(seconds: 2), () {});
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>NewsMainPage(title: '',)));
-    }
+  _navigatetohome() async {
+    await Future.delayed(Duration(seconds: 2), () {});
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (context) => NewsMainPage(
+                  title: '',
+                )));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,8 @@ class _SplashState extends State<Splash> {
           // Text('HOT NEWS', style: TextStyle(
           //   fontSize: 24,
           //   fontWeight: FontWeight.bold
-          ),),
-        );
+        ),
+      ),
+    );
   }
 }
