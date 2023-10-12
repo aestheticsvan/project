@@ -1,15 +1,35 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:project/widgets/elbutton.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
 
+  void printEdit() {
+    print('Edit');
+  }
+
+  void printLiked() {
+    print('Liked posts');
+  }
+
+  void printSettings() {
+    print('Settings');
+  }
+
+  void printPrivacy() {
+    print('Privacy');
+  }
+
+  void printLog_out() {
+    print('Log out');
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    final style = ButtonStyle(
-    );
+    final style = ButtonStyle();
     return Scaffold(
       appBar: AppBar(
         title: Text('User'),
@@ -59,41 +79,42 @@ class UserProfile extends StatelessWidget {
                       SizedBox(
                         height: 20,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          OutlinedButton.icon(style: style,
-                              onPressed: () {print(1);}, icon: const Icon(Icons.create), label: const Text('Edit profile'),),
-                        ],
+                      ElButton(
+                        title: 'Edit',
+                        icon: Icons.edit,
+                        icon1: Icons.keyboard_arrow_right,
+                        onPressed: () {
+                          print('Edit');
+                        },
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          OutlinedButton.icon(style: style,
-                              onPressed: () {print(2);}, icon: const Icon(Icons.favorite), label: const Text('Liked posts'),),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          OutlinedButton.icon(style: style,
-                              onPressed: () {print(3);}, icon: const Icon(Icons.settings), label: const Text('Settings'),),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          OutlinedButton.icon(style: style,
-                              onPressed: () {print(4);}, icon: const Icon(Icons.lock), label: const Text('Privacy'),),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          OutlinedButton.icon(style: style,
-                              onPressed: () {print(5);}, icon: const Icon(Icons.logout), label: const Text('Log out'),),
-                        ],
-                      ),
+                      ElButton(
+                          title: 'Liked posts',
+                          icon: Icons.favorite,
+                          icon1: Icons.keyboard_arrow_right,
+                          onPressed: () {
+                            print('Liked posts');
+                          }),
+                      ElButton(
+                          title: 'Settings',
+                          icon: Icons.settings,
+                          icon1: Icons.keyboard_arrow_right,
+                          onPressed: () {
+                            print('Settings');
+                          }),
+                      ElButton(
+                          title: 'Privacy',
+                          icon: Icons.lock,
+                          icon1: Icons.keyboard_arrow_right,
+                          onPressed: () {
+                            print('Privacy');
+                          }),
+                      ElButton(
+                          title: 'Log out',
+                          icon: Icons.logout,
+                          icon1: Icons.keyboard_arrow_right,
+                          onPressed: () {
+                            print('Log out');
+                          }),
                     ],
                   ),
                 ],
